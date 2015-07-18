@@ -27,6 +27,11 @@
                                  withObjectType:[Coord class]
                                        forClass:[WeatherObject class]];
     
+    [inCodeMappingProvider mapFromDictionaryKey:@"weather"
+                                  toPropertyKey:@"weatherDetails"
+                                 withObjectType:[WeatherDetail class]
+                                       forClass:[Weather class]];
+    
 
 
 }

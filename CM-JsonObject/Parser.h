@@ -11,4 +11,7 @@
 
 @interface Parser : NSObject
 + (WeatherObject *)parseWeatherObject;
++ (WeatherDetail *)parseWeatherDetail;
++ (NSMutableArray *)parseWeatherDetails;
++ (Weather *)parseWeather;
 @end

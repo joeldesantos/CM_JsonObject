@@ -10,7 +10,7 @@
 
 #define nURLWeather     @"http://api.openweathermap.org/data/2.5/weather?"
 
-NSDictionary    *mjsonWeather;
+NSDictionary    *mjsonWeatherObject;
 WeatherObject   *mWeatherObject;
 @implementation Declarations
 /**********************************************************************************************/

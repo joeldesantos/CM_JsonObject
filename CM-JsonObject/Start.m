@@ -26,12 +26,16 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)initData {
-    mjsonWeather    = [Declarations getWeather:nUagLat and:nUagLng];
-    mWeatherObject  = [Parser parseWeatherObject];
+    mjsonWeatherObject              = [Declarations getWeather:nUagLat and:nUagLng];
+    mWeatherObject                  = [Parser parseWeatherObject];
+    Weather *weather                = [Parser parseWeather];
+    
+    WeatherDetail *weatherDetail    = [weather getWeatherDetail:0];
+    print(NSLog(@"icon %@", weatherDetail.icon))
 }
 
 - (IBAction)btnGetDataPressed:(id)sender {
-    mjsonWeather    = [Declarations getWeather:nUagLat and:nUagLng];
+    mjsonWeatherObject    = [Declarations getWeather:nUagLat and:nUagLng];
     mWeatherObject  = [Parser parseWeatherObject];
     
     float tempKelvin        = mWeatherObject.main.temp;
