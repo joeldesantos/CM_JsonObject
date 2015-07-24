@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "WeatherObject.h"
+#import "Coord.h"
 @interface OCMapperConfig : NSObject
 
 + (void)configure;

@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Declarations.h"
 
 @interface Parser : NSObject
-
++ (WeatherObject *)parseWeatherObject;
++ (WeatherDetail *)parseWeatherDetail;
++ (NSMutableArray *)parseWeatherDetails;
++ (Weather *)parseWeather;
 @end
