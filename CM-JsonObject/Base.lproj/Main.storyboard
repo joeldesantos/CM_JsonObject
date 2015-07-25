@@ -162,10 +162,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rln-7v-eNl" userLabel="imgWeather">
+                                <rect key="frame" x="135" y="389" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="imgWeather" destination="rln-7v-eNl" id="20Y-KX-D0F"/>
                         <outlet property="lblCloudsAll" destination="Stt-rF-xJg" id="dEt-Uu-h1g"/>
                         <outlet property="lblHumidity" destination="Oi8-Gg-apg" id="fzx-vS-VFN"/>
                         <outlet property="lblName" destination="jye-88-uvT" id="ltH-Ux-qOt"/>

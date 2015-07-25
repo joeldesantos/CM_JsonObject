@@ -14,6 +14,7 @@
 @interface Start : UIViewController
 @property (nonatomic,strong)    Declarations            *Declarations;
 @property (nonatomic,strong)    Parser                  *Parser;
+@property (nonatomic,strong)    WeatherDetail           *weatherDetail;
 
 //Objects
 @property (strong, nonatomic) IBOutlet UILabel *lblTemp;
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblSysCountry;
 @property (strong, nonatomic) IBOutlet UILabel *lblCloudsAll;
 @property (strong, nonatomic) IBOutlet UILabel *lblName;
+@property (strong, nonatomic) IBOutlet UIImageView *imgWeather;
 
 //Actions
 - (IBAction)btnGetDataPressed:(id)sender;

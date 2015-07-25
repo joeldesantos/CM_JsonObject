@@ -31,8 +31,7 @@
     mWeatherObject                  = [Parser parseWeatherObject];
     Weather *weather                = [Parser parseWeather];
     
-    WeatherDetail *weatherDetail    = [weather getWeatherDetail:0];
-    print(NSLog(@"icon %@", weatherDetail.icon))
+    self.weatherDetail    = [weather getWeatherDetail:0];
 }
 
 - (IBAction)btnGetDataPressed:(id)sender {
@@ -52,5 +51,12 @@
     self.lblSysCountry.text = [NSString stringWithFormat:@"%@", mWeatherObject.sys.country];
     self.lblCloudsAll.text  = [NSString stringWithFormat:@"%d", mWeatherObject.clouds.all];
     self.lblName.text       = [NSString stringWithFormat:@"%@", mWeatherObject.name];
+    
+    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png", self.weatherDetail.icon]];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    //    UIImage *image = [UIImage imageWithData:imageData];
+    
+    self.imgWeather.image = [UIImage imageWithData:imageData];//[UIImage imageNamed:mstIcon];
+    self.imgWeather.frame  = CGRectMake(self.imgWeather.frame.origin.x,self.imgWeather.frame.origin.y,50,50);
 }
 @end
