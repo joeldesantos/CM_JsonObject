@@ -27,6 +27,7 @@
 }
 - (void)initData {
     mjsonWeatherObject              = [Declarations getWeather:nUagLat and:nUagLng];
+    
     mWeatherObject                  = [Parser parseWeatherObject];
     Weather *weather                = [Parser parseWeather];
     
@@ -40,10 +41,16 @@
     
     float tempKelvin        = mWeatherObject.main.temp;
     float tempCelsius       = tempKelvin - 273.15;
-    self.lblTemp.text       = [NSString stringWithFormat:@"%.2f", tempCelsius];
-    self.lblTempMax.text    = [NSString stringWithFormat:@"%.2f", mWeatherObject.main.temp_max - 273.15];
-    self.lblTempMin.text    = [NSString stringWithFormat:@"%.2f", mWeatherObject.main.temp_min - 273.15];
-    self.lblPressure.text   = [NSString stringWithFormat:@"%d", mWeatherObject.main.pressure];
-    self.lblHumidity.text   = [NSString stringWithFormat:@"%d", mWeatherObject.main.humidity];
+    self.lblTemp.text       = [NSString stringWithFormat:@"%.2f ˚C", tempCelsius];
+    self.lblTempMax.text    = [NSString stringWithFormat:@"%.2f ˚C", mWeatherObject.main.temp_max - 273.15];
+    self.lblTempMin.text    = [NSString stringWithFormat:@"%.2f ˚C", mWeatherObject.main.temp_min - 273.15];
+    self.lblPressure.text   = [NSString stringWithFormat:@"%d atm", mWeatherObject.main.pressure];
+    self.lblHumidity.text   = [NSString stringWithFormat:@"%d %@", mWeatherObject.main.humidity, @"%"];
+    
+    self.lblWindDeg.text    = [NSString stringWithFormat:@"%d", mWeatherObject.wind.deg];
+    self.lblWindSpeed.text  = [NSString stringWithFormat:@"%@", mWeatherObject.wind.speed];
+    self.lblSysCountry.text = [NSString stringWithFormat:@"%@", mWeatherObject.sys.country];
+    self.lblCloudsAll.text  = [NSString stringWithFormat:@"%d", mWeatherObject.clouds.all];
+    self.lblName.text       = [NSString stringWithFormat:@"%@", mWeatherObject.name];
 }
 @end
